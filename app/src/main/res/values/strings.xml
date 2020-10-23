@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Hilt Sample</string>
+    <string name="title_dynamicfeature">DynamicFeature Title</string>
+</resources>

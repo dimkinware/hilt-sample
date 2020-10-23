@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.sample.hilt"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    dynamicFeatures = [':dynamicfeature']
+}
+
+dependencies {
+    implementation project(":analytics")
+    implementation project(":core")
+    implementation project(":core-network")
+    implementation project(":feature-iss-info")
+    implementation project(":feature-iss-on-map")
+
+    implementation kotlinStdLib
+    implementation timber
+
+    implementation androidxViewModelKtx
+    implementation androidxCoreKtx
+    implementation androidxFragmentKtx
+//    implementation androidxActivity
+//    implementation androidxViewModelState
+//    implementation androidxLifecycleRuntime
+
+    implementation androidxCoreKtx
+    implementation androidxAppCompat
+    implementation androidxConstraintLayout
+
+    implementation hiltAndroid
+    implementation hiltViewModel
+    kapt hiltAndroidCompiler
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

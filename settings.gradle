@@ -1,0 +1,8 @@
+include ':dynamicfeature'
+include ':analytics'
+include ':core'
+include ':feature-iss-on-map'
+include ':feature-iss-info'
+include ':core-network'
+include ':app'
+rootProject.name = "Hilt Sample"

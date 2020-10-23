@@ -1,0 +1,10 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sample.hilt.feature.iss.onmap">
+
+    <application>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value=""/>
+    </application>
+</manifest>
